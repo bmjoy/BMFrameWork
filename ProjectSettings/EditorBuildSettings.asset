@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Examples/ObjectPool/GameObjectPool.unity
+    guid: fdb18092cdf5c024ba39e042b5675120
   m_configObjects: {}
