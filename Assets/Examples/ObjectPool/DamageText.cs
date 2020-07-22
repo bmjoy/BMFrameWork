@@ -6,7 +6,8 @@ using TMPro;
 public class DamageText : MonoBehaviour
 {
     private float disappearSpeed = 5f;
-    private float disappearTimer = 0.5f;
+    private float disappearTimer;
+    private float disappearTimeDefault = 0.5f;
     private float ySpeed = 1.25f;
     private TextMeshPro textMesh;
     private Color textColor;
@@ -14,17 +15,6 @@ public class DamageText : MonoBehaviour
     public Transform target;
     public Vector3 oldPos;
     public float flyLenth;
-
-    //public static DamageText Create(Vector3 position, int damage, bool friendly, Transform target = null)
-    //{
-    //    GameObject damageTextObject = Instantiate(target.gameObject, position, Quaternion.identity);
-    //    DamageText damageText = damageTextObject.GetComponent<DamageText>();
-    //    damageText.target = target;
-    //    damageText.oldPos = position;
-    //    damageText.flyLenth = 0.0f;
-    //    damageText.Setup(damage, friendly);
-    //    return damageText;      
-    //}
 
     public void Setup(int damage, bool friendly)
     {
@@ -40,6 +30,7 @@ public class DamageText : MonoBehaviour
             textColor = Color.red;
             textMesh.color = textColor;
         }
+        disappearTimer = disappearTimeDefault;
     } 
 
     private void Awake()

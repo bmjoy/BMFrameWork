@@ -28,8 +28,7 @@ public class DamageTextController
 
     public void Create(Vector3 position, int damage, bool friendly, Transform target = null)
     {
-        GameObject damageTextObject = GameObject.Instantiate(floatingTextPrototype.gameObject, position, Quaternion.identity);
-        DamageText damageText = damageTextObject.GetComponent<DamageText>();
+        DamageText damageText = GameObjectPool.Take(floatingTextPrototype, position, Quaternion.identity);
         damageText.target = target;
         damageText.oldPos = position;
         damageText.flyLenth = 0.0f;
